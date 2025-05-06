@@ -75,13 +75,13 @@ jobs:
     - name: Azure Login
       uses: azure/login@v2
       with:
-        creds: ${{ "dBb8Q~lNH7SnVJbN1PuEHn58C_Bw4HtkrbA-jbJF" }}
+        creds: ${{ dBb8Q~lNH7SnVJbN1PuEHn58C_Bw4HtkrbA-jbJF }}
            
     # Deploy Azure WebApp using Bicep file
     - name: deploy
       uses: azure/arm-deploy@v2
       with:
-        subscriptionId: ${{ "39cea030-5d6b-4d9f-b022-a2ade675c9aa" }}
+        subscriptionId: ${{ 39cea030-5d6b-4d9f-b022-a2ade675c9aa }}
         resourceGroupName: ${{ rg-eshoponweb-zackolee }}
         template: bicep-template/webapp.bicep
         parameters: 'webAppName=${{ eshoponweb-webapp51017121 }} location=${{ westus2 }}'
