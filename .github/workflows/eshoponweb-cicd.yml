@@ -75,16 +75,16 @@ jobs:
     - name: Azure Login
       uses: azure/login@v2
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ "dBb8Q~lNH7SnVJbN1PuEHn58C_Bw4HtkrbA-jbJF" }}
            
     # Deploy Azure WebApp using Bicep file
     - name: deploy
       uses: azure/arm-deploy@v2
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
+        subscriptionId: ${{ "39cea030-5d6b-4d9f-b022-a2ade675c9aa" }}
+        resourceGroupName: ${{ rg-eshoponweb-zackolee }}
         template: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+        parameters: 'webAppName=${{ eshoponweb-webapp51017121 }} location=${{ westus2 }}'
         failOnStdErr: false   
     
     # Publish website to Azure App Service (WebApp)
@@ -94,7 +94,7 @@ jobs:
       uses: Azure/webapps-deploy@v3
       with:
         type: ZIP
-        app-name: ${{ env.WEBAPP-NAME  }}
+        app-name: ${{ westus2  }}
         package: .net-app/app.zip
 
     # Publish website to Azure App Service using CLI (WebApp)
@@ -102,4 +102,4 @@ jobs:
       uses: Azure/cli@v2
       with:
         inlineScript: |
-             az webapp deploy --name ${{ env.WEBAPP-NAME }} --resource-group ${{ env.RESOURCE-GROUP }} --src-path .net-app/app.zip --type zip
+             az webapp deploy --name ${{ eshoponweb-webapp51017121 }} --resource-group ${{ rg-eshoponweb-zackolee }} --src-path .net-app/app.zip --type zip
