@@ -8,7 +8,7 @@ env:
   RESOURCE-GROUP: rg-eshoponweb-zackolee
   LOCATION: westus2
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: 39cea030-5d6b-4d9f-b022-a2ade675c9aa
+  SUBSCRIPTION-ID: "39cea030-5d6b-4d9f-b022-a2ade675c9aa"
   WEBAPP-NAME: eshoponweb-webapp51017121
 
 
